@@ -31,6 +31,8 @@ var done: bool = false
 var alive = true
 
 func _ready() -> void:
+	Global.tutorial_mode = false
+	
 	if Global.file != "": chart_file_path = Global.file
 	
 	var level_data = _load_mt_package(chart_file_path)

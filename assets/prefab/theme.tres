@@ -1,0 +1,45 @@
+[gd_resource type="Theme" format=3 uid="uid://2y7t0ykecark"]
+
+[ext_resource type="StyleBox" uid="uid://0dx338k3ow8n" path="res://assets/prefab/styles/panel.tres" id="1_7cjwb"]
+[ext_resource type="StyleBox" uid="uid://uihhha0tnyr" path="res://assets/prefab/styles/panel_disabled.tres" id="1_ci6i4"]
+[ext_resource type="Texture2D" uid="uid://drqbvk7fwogbx" path="res://assets/sprites/panel_disabled.png" id="1_if068"]
+[ext_resource type="StyleBox" uid="uid://carwlgr85fp1p" path="res://assets/prefab/styles/panel_light.tres" id="2_ci6i4"]
+[ext_resource type="Texture2D" uid="uid://7f1g2030cuhy" path="res://assets/sprites/progress.png" id="5_rr2hv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pk86"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv8jo"]
+texture = ExtResource("1_if068")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qqvx0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1pk86"]
+texture = ExtResource("5_rr2hv")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.1148968, 0.11489681, 0.1148968, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rv8jo"]
+
+[resource]
+Button/styles/disabled = ExtResource("1_ci6i4")
+Button/styles/focus = SubResource("StyleBoxEmpty_1pk86")
+Button/styles/hover = ExtResource("2_ci6i4")
+Button/styles/hover_pressed = ExtResource("1_7cjwb")
+Button/styles/normal = ExtResource("1_7cjwb")
+Button/styles/pressed = SubResource("StyleBoxTexture_rv8jo")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_qqvx0")
+LineEdit/styles/normal = ExtResource("1_7cjwb")
+LineEdit/styles/read_only = ExtResource("1_ci6i4")
+Panel/styles/panel = ExtResource("1_7cjwb")
+ProgressBar/styles/background = ExtResource("1_7cjwb")
+ProgressBar/styles/fill = SubResource("StyleBoxTexture_1pk86")
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_rv8jo")
+TextEdit/styles/normal = ExtResource("1_7cjwb")
+TextEdit/styles/read_only = ExtResource("1_ci6i4")

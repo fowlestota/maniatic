@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Maniatic"
+config/version="26.1.1"
 run/main_scene="uid://dxaykrtc44c31"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="uid://dvtfubyrwdho1"
+config/icon="res://icon.svg"
 
 [audio]
 
@@ -44,6 +45,7 @@ folder_colors={
 
 [gui]
 
+theme/custom="uid://2y7t0ykecark"
 theme/custom_font="uid://8msibpqj4t4b"
 
 [input]
@@ -109,3 +111,4 @@ textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.08468998, 0.08468991, 0.08468992, 1)

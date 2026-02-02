@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ct1uq0m2f5lkf"]
 
-[ext_resource type="StyleBox" uid="uid://b3e0dd5jnxc7" path="res://assets/prefab/note_styles/strum.tres" id="1_47rbg"]
+[ext_resource type="StyleBox" uid="uid://7l8uyos1b003" path="res://assets/prefab/note_styles/strum.tres" id="1_47rbg"]
 [ext_resource type="Script" uid="uid://br8ovskocfpy5" path="res://scripts/strum_marker.gd" id="2_hkb2m"]
 
 [node name="StrumMarker" type="Panel" unique_id=1704008479]

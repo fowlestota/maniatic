@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://0dx338k3ow8n"]
+
+[ext_resource type="Texture2D" uid="uid://cl8l6iyn36vva" path="res://assets/sprites/note.png" id="1_3awxk"]
+
+[resource]
+texture = ExtResource("1_3awxk")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+modulate_color = Color(0.45840472, 0.45840514, 0.45840502, 1)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cotrp8ny775e0"
-path="res://.godot/imported/note_outline.png-03bba9a020f91da129d8ea415b0cb5ef.ctex"
+uid="uid://bfj8i24dsbmnk"
+path="res://.godot/imported/panel_light.png-0228f283ba17fc64bdb0bbfc1fa3682b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/note_outline.png"
-dest_files=["res://.godot/imported/note_outline.png-03bba9a020f91da129d8ea415b0cb5ef.ctex"]
+source_file="res://assets/sprites/panel_light.png"
+dest_files=["res://.godot/imported/panel_light.png-0228f283ba17fc64bdb0bbfc1fa3682b.ctex"]
 
 [params]
 

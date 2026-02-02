@@ -9,30 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cbbdkn0eh5wa" path="res://assets/prefab/long_strum_marker.tscn" id="6_klq6b"]
 [ext_resource type="PackedScene" uid="uid://nth8fr8npgya" path="res://assets/prefab/bomb_long.tscn" id="6_olg7q"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx8sn"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(0.1, 0.1, 0.1, 0.6)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppgk2"]
-content_margin_left = 0.0
-content_margin_top = 0.0
-content_margin_right = 0.0
-content_margin_bottom = 0.0
-bg_color = Color(1, 1, 1, 0.3137255)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-corner_detail = 5
-
 [sub_resource type="Animation" id="Animation_ppgk2"]
 length = 0.001
 tracks/0/type = "value"
@@ -133,7 +109,7 @@ chart_file_path = "res://assets/songs/tutorial.mt"
 z_index = -10
 position = Vector2(80, 354)
 script = ExtResource("6_2r41h")
-bar_color = Color(1, 1, 1, 0.078431375)
+bar_color = Color(1, 1, 1, 0.09803922)
 bar_count = 32
 total_width = 640.0
 show_reflection = false
@@ -162,8 +138,6 @@ offset_right = -8.0
 offset_bottom = -8.0
 grow_horizontal = 0
 grow_vertical = 0
-theme_override_styles/background = SubResource("StyleBoxFlat_mx8sn")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ppgk2")
 max_value = 1.0
 fill_mode = 1
 show_percentage = false

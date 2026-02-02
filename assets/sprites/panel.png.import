@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bv6uqr1ug336i"
-path="res://.godot/imported/note_color.png-f5fee040f94e647c48c4a4d0cd2cf551.ctex"
+uid="uid://c7marqvoxoa1a"
+path="res://.godot/imported/panel.png-28a99945626dfccd0faecf81499f7afa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/note_color.png"
-dest_files=["res://.godot/imported/note_color.png-f5fee040f94e647c48c4a4d0cd2cf551.ctex"]
+source_file="res://assets/sprites/panel.png"
+dest_files=["res://.godot/imported/panel.png-28a99945626dfccd0faecf81499f7afa.ctex"]
 
 [params]
 

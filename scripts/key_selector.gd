@@ -39,8 +39,4 @@ func _update_action_binding(new_event: InputEvent):
 		print("Action ", action_name, " bound to ", new_event.as_text())
 
 func _update_display():
-	var events = InputMap.action_get_events(action_name)
-	if events.size() > 0:
-		text = events[0].as_text().trim_suffix(" - Physical")
-	else:
-		text = "None"
+	text = Global.get_input_key(action_name)

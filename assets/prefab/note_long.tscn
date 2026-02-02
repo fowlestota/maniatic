@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bw74jyxsvj3ds"]
 
-[ext_resource type="StyleBox" uid="uid://78n8iaumhwv2" path="res://assets/prefab/note_styles/0.tres" id="1_nmq3w"]
+[ext_resource type="StyleBox" uid="uid://tulpgar6lf11" path="res://assets/prefab/note_styles/0.tres" id="1_nmq3w"]
 [ext_resource type="Script" uid="uid://conoqp4fembcg" path="res://scripts/note.gd" id="2_hovj5"]
 
 [node name="Panel" type="Panel" unique_id=1922875703]

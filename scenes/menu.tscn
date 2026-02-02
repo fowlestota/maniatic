@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dxaykrtc44c31"]
 
 [ext_resource type="Script" uid="uid://1guvh0ay8yih" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Texture2D" uid="uid://hwjgh533p6vy" path="res://logo_small_gray.png" id="2_con2f"]
 [ext_resource type="Script" uid="uid://cpxc3hcujpxp3" path="res://scripts/key_selector.gd" id="2_vjb58"]
 
 [node name="Menu" type="Control" unique_id=1125507559]
@@ -27,11 +28,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 48
 
-[node name="Title" type="Label" parent="Main" unique_id=1496647081]
+[node name="Logo" type="TextureRect" parent="Main" unique_id=1841695060]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 48
-text = "Maniatic"
+texture = ExtResource("2_con2f")
 
 [node name="Buttons" type="VBoxContainer" parent="Main" unique_id=1285183829]
 layout_mode = 2
@@ -47,18 +46,21 @@ text = "Play Tutorial"
 [node name="PlayMap" type="Button" parent="Main/Buttons" unique_id=1367095602]
 custom_minimum_size = Vector2(300, 52)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Play Map"
 
 [node name="Editor" type="Button" parent="Main/Buttons" unique_id=661085608]
 custom_minimum_size = Vector2(300, 52)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Editor"
 
 [node name="Keybinds" type="Button" parent="Main/Buttons" unique_id=1686015075]
 custom_minimum_size = Vector2(300, 52)
 layout_mode = 2
+size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 24
 text = "Keybinds"
 

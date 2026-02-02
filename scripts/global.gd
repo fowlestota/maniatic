@@ -60,3 +60,10 @@ func _on_exit():
 	save_settings()
 	
 	get_tree().quit()
+	
+func get_input_key(action_name: String):
+	var events = InputMap.action_get_events(action_name)
+	if events.size() > 0:
+		return events[0].as_text().trim_suffix(" - Physical")
+	else:
+		return "None"
