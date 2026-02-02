@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://mi4kcxk558pj"]
+
+[ext_resource type="Script" uid="uid://cihno0pf58kjw" path="res://scripts/editor.gd" id="1_ba0ut"]
+[ext_resource type="PackedScene" uid="uid://b25d4ct2mcfbu" path="res://assets/prefab/note_preview.tscn" id="2_q68jb"]
+[ext_resource type="PackedScene" uid="uid://de3kbn6otq4mn" path="res://assets/prefab/long_note_preview.tscn" id="3_xg7d5"]
+
+[node name="Editor" type="Control" unique_id=1679795770 node_paths=PackedStringArray("bpm_value", "song_name_value", "artist_value", "note_type_value", "scroll_speed_value")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ba0ut")
+bpm = 180.0
+note_preview_scene = ExtResource("2_q68jb")
+middle_note_preview_scene = ExtResource("3_xg7d5")
+bpm_value = NodePath("Values/BPM/Value")
+song_name_value = NodePath("Values/SongName/Value")
+artist_value = NodePath("Values/Artist/Value")
+note_type_value = NodePath("Values/NoteType/Value")
+scroll_speed_value = NodePath("Values/ScrollSpeed/Value")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2040755726]
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1965809188]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 48
+
+[node name="ColorRect" type="ColorRect" parent="Margin" unique_id=1154781217]
+custom_minimum_size = Vector2(288, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+color = Color(0.1, 0.1, 0.1, 0.2)
+
+[node name="Scroll" type="ScrollContainer" parent="Margin" unique_id=960886131]
+custom_minimum_size = Vector2(288, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Notes" type="Control" parent="Margin/Scroll" unique_id=1706619401]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Values" type="VBoxContainer" parent="." unique_id=912578568]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 0
+offset_left = 352.0
+offset_top = 80.0
+offset_right = 602.0
+offset_bottom = 111.0
+
+[node name="BPM" type="HBoxContainer" parent="Values" unique_id=115865505]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Values/BPM" unique_id=1360726460]
+layout_mode = 2
+text = "BPM:"
+
+[node name="Value" type="SpinBox" parent="Values/BPM" unique_id=853654746]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 10.0
+max_value = 522.0
+value = 120.0
+
+[node name="ScrollSpeed" type="HBoxContainer" parent="Values" unique_id=712992317]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Values/ScrollSpeed" unique_id=890788611]
+layout_mode = 2
+text = "Scroll Speed:"
+
+[node name="Value" type="SpinBox" parent="Values/ScrollSpeed" unique_id=2106430206]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 10.0
+step = 0.1
+value = 1.0
+
+[node name="SongName" type="HBoxContainer" parent="Values" unique_id=614196967]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Values/SongName" unique_id=1195021623]
+layout_mode = 2
+text = "Name:"
+
+[node name="Value" type="LineEdit" parent="Values/SongName" unique_id=349839098]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Song"
+
+[node name="Artist" type="HBoxContainer" parent="Values" unique_id=1990746761]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Values/Artist" unique_id=1207404884]
+layout_mode = 2
+text = "Artist:"
+
+[node name="Value" type="LineEdit" parent="Values/Artist" unique_id=1081083819]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Artist"
+
+[node name="NoteType" type="HBoxContainer" parent="Values" unique_id=1702137374]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="Values/NoteType" unique_id=1332136874]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Note Type:"
+vertical_alignment = 1
+
+[node name="Value" type="SpinBox" parent="Values/NoteType" unique_id=1642109972]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="Values" unique_id=702550421]
+custom_minimum_size = Vector2(0, 128)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Space: Play Song
+Alt-E: Exit Editor
+Alt-O: Open Audio (MP3)
+Ctrl-O: Open Map
+Ctrl-S: Save Map"
+vertical_alignment = 2
+
+[node name="Time" type="Label" parent="." unique_id=1712798979]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 48.0
+offset_right = 392.0
+offset_bottom = 71.0
+text = "0:0"
+
+[node name="SaveMT" type="FileDialog" parent="." unique_id=597079350]
+oversampling_override = 1.0
+initial_position = 2
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.mt")
+folder_creation_enabled = false
+favorites_enabled = false
+layout_toggle_enabled = false
+deleting_enabled = false
+
+[node name="LoadMT" type="FileDialog" parent="." unique_id=1843172416]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.mt")
+folder_creation_enabled = false
+favorites_enabled = false
+layout_toggle_enabled = false
+deleting_enabled = false
+
+[node name="LoadAudio" type="FileDialog" parent="." unique_id=1233095446]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.mp3")
+folder_creation_enabled = false
+favorites_enabled = false
+layout_toggle_enabled = false
+deleting_enabled = false
+
+[connection signal="value_changed" from="Values/BPM/Value" to="." method="change_bpm"]
+[connection signal="file_selected" from="SaveMT" to="." method="save_mt"]
+[connection signal="file_selected" from="LoadMT" to="." method="load_mt"]
+[connection signal="file_selected" from="LoadAudio" to="." method="load_audio"]

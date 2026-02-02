@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://dxaykrtc44c31"]
+
+[ext_resource type="Script" uid="uid://1guvh0ay8yih" path="res://scripts/menu.gd" id="1_yqeox"]
+[ext_resource type="Script" uid="uid://cpxc3hcujpxp3" path="res://scripts/key_selector.gd" id="2_vjb58"]
+
+[node name="Menu" type="Control" unique_id=1125507559]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yqeox")
+
+[node name="Main" type="VBoxContainer" parent="." unique_id=961264964]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -107.5
+offset_right = 150.0
+offset_bottom = 107.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 48
+
+[node name="Title" type="Label" parent="Main" unique_id=1496647081]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 48
+text = "Maniatic"
+
+[node name="Buttons" type="VBoxContainer" parent="Main" unique_id=1285183829]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="PlayTutorial" type="Button" parent="Main/Buttons" unique_id=1668932393]
+visible = false
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Play Tutorial"
+
+[node name="PlayMap" type="Button" parent="Main/Buttons" unique_id=1367095602]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Play Map"
+
+[node name="Editor" type="Button" parent="Main/Buttons" unique_id=661085608]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Editor"
+
+[node name="Keybinds" type="Button" parent="Main/Buttons" unique_id=1686015075]
+custom_minimum_size = Vector2(300, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Keybinds"
+
+[node name="LoadMT" type="FileDialog" parent="." unique_id=1525684334]
+oversampling_override = 1.0
+title = "Open a File"
+initial_position = 2
+file_mode = 0
+display_mode = 1
+access = 2
+filters = PackedStringArray("*.mt")
+folder_creation_enabled = false
+favorites_enabled = false
+layout_toggle_enabled = false
+deleting_enabled = false
+
+[node name="Keybinds" type="Window" parent="." unique_id=1941651942]
+oversampling_override = 1.0
+title = "Keybinds"
+initial_position = 2
+size = Vector2i(400, 250)
+visible = false
+minimize_disabled = true
+maximize_disabled = true
+
+[node name="Keys" type="VBoxContainer" parent="Keybinds" unique_id=1638757732]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -110.0
+offset_top = -66.0
+offset_right = 110.0
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Left" type="HBoxContainer" parent="Keybinds/Keys" unique_id=727354950]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Key" type="Label" parent="Keybinds/Keys/Left" unique_id=743555892]
+layout_mode = 2
+text = "Left:"
+
+[node name="KeySelector" type="Button" parent="Keybinds/Keys/Left" unique_id=791144452]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+toggle_mode = true
+script = ExtResource("2_vjb58")
+action_name = "note_left"
+metadata/_custom_type_script = "uid://cpxc3hcujpxp3"
+
+[node name="MidLeft" type="HBoxContainer" parent="Keybinds/Keys" unique_id=160881363]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Key" type="Label" parent="Keybinds/Keys/MidLeft" unique_id=246049686]
+layout_mode = 2
+text = "Mid Left:"
+
+[node name="KeySelector" type="Button" parent="Keybinds/Keys/MidLeft" unique_id=153499968]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+toggle_mode = true
+script = ExtResource("2_vjb58")
+action_name = "note_down"
+metadata/_custom_type_script = "uid://cpxc3hcujpxp3"
+
+[node name="Middle" type="HBoxContainer" parent="Keybinds/Keys" unique_id=734790714]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Key" type="Label" parent="Keybinds/Keys/Middle" unique_id=1126349137]
+layout_mode = 2
+text = "Middle:"
+
+[node name="KeySelector" type="Button" parent="Keybinds/Keys/Middle" unique_id=1504668375]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+toggle_mode = true
+script = ExtResource("2_vjb58")
+metadata/_custom_type_script = "uid://cpxc3hcujpxp3"
+
+[node name="MidRight" type="HBoxContainer" parent="Keybinds/Keys" unique_id=2112046925]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Key" type="Label" parent="Keybinds/Keys/MidRight" unique_id=437217633]
+layout_mode = 2
+text = "Mid Right:"
+
+[node name="KeySelector" type="Button" parent="Keybinds/Keys/MidRight" unique_id=738711013]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+toggle_mode = true
+script = ExtResource("2_vjb58")
+action_name = "note_up"
+metadata/_custom_type_script = "uid://cpxc3hcujpxp3"
+
+[node name="Right" type="HBoxContainer" parent="Keybinds/Keys" unique_id=1072653261]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Key" type="Label" parent="Keybinds/Keys/Right" unique_id=816589971]
+layout_mode = 2
+text = "Right:"
+
+[node name="KeySelector" type="Button" parent="Keybinds/Keys/Right" unique_id=589785946]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+toggle_mode = true
+script = ExtResource("2_vjb58")
+action_name = "note_right"
+metadata/_custom_type_script = "uid://cpxc3hcujpxp3"
+
+[connection signal="pressed" from="Main/Buttons/PlayMap" to="." method="play_map"]
+[connection signal="pressed" from="Main/Buttons/Editor" to="." method="editor"]
+[connection signal="pressed" from="Main/Buttons/Keybinds" to="." method="show_keybinds"]
+[connection signal="file_selected" from="LoadMT" to="." method="load_mt"]
+[connection signal="close_requested" from="Keybinds" to="." method="close_keybinds"]
+[connection signal="focus_exited" from="Keybinds" to="." method="close_keybinds"]

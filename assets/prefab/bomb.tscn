@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://dm10was5vke46"]
+
+[ext_resource type="StyleBox" uid="uid://c0rv2e1eprn74" path="res://assets/prefab/note_styles/1.tres" id="1_4apw3"]
+[ext_resource type="Script" uid="uid://conoqp4fembcg" path="res://scripts/note.gd" id="1_kbumu"]
+
+[node name="Panel" type="Panel" unique_id=1922875703]
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/panel = ExtResource("1_4apw3")
+script = ExtResource("1_kbumu")
+damage_note = true
+colored = false

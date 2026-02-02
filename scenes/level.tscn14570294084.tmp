@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://qfm61ysdyp27"]
+
+[ext_resource type="Script" uid="uid://dy8ok2r1w086g" path="res://scripts/level.gd" id="1_2q6dc"]
+[ext_resource type="Script" uid="uid://cspkxvjktvwwf" path="res://scripts/chart_resource.gd" id="2_w7c3h"]
+[ext_resource type="PackedScene" uid="uid://bbtjgd8hst2p2" path="res://assets/prefab/note.tscn" id="3_w8frs"]
+[ext_resource type="PackedScene" uid="uid://ct1uq0m2f5lkf" path="res://assets/prefab/strum_marker.tscn" id="4_mx8sn"]
+[ext_resource type="PackedScene" uid="uid://dm10was5vke46" path="res://assets/prefab/bomb.tscn" id="4_ppgk2"]
+
+[sub_resource type="Resource" id="Resource_w8frs"]
+script = ExtResource("2_w7c3h")
+bpm = 185.0
+scroll_speed = 3.0
+metadata/_custom_type_script = "uid://cspkxvjktvwwf"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mx8sn"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ppgk2"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(1, 1, 1, 0.3137255)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="Animation" id="Animation_ppgk2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Notes:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2r41h"]
+resource_name = "die"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Music:pitch_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.01]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Notes:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_klq6b"]
+_data = {
+&"RESET": SubResource("Animation_ppgk2"),
+&"die": SubResource("Animation_2r41h")
+}
+
+[node name="Level" type="Node2D" unique_id=883089415 node_paths=PackedStringArray("strum_line")]
+script = ExtResource("1_2q6dc")
+chart = SubResource("Resource_w8frs")
+strum_line = NodePath("StrumLine")
+note_scenes = Array[PackedScene]([ExtResource("3_w8frs"), ExtResource("4_ppgk2")])
+strum_marker_scene = ExtResource("4_mx8sn")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=1594583836]
+bus = &"Music"
+
+[node name="StrumLine" type="Marker2D" parent="." unique_id=6025662]
+position = Vector2(400, 50)
+
+[node name="Notes" type="Node2D" parent="." unique_id=90707864]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=987297048]
+
+[node name="HealthBar" type="ProgressBar" parent="CanvasLayer" unique_id=1977011801]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -248.0
+offset_top = -35.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_mx8sn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ppgk2")
+max_value = 1.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Score" type="Label" parent="CanvasLayer" unique_id=641080579]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -66.0
+offset_right = -8.0
+offset_bottom = -43.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1658898408]
+libraries/ = SubResource("AnimationLibrary_klq6b")
+
+[connection signal="finished" from="Music" to="." method="_complete_song"]

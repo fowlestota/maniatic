@@ -1,0 +1,10 @@
+[gd_resource type="FontVariation" format=3 uid="uid://8msibpqj4t4b"]
+
+[ext_resource type="FontFile" uid="uid://bsdjeka0ccxry" path="res://assets/fonts/inter.ttf" id="1_4mrrj"]
+
+[resource]
+base_font = ExtResource("1_4mrrj")
+variation_opentype = {
+1869640570: 14,
+2003265652: 550
+}

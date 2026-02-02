@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://de3kbn6otq4mn"]
+
+[ext_resource type="Script" uid="uid://cbbnrglm3hmsn" path="res://scripts/note_preview.gd" id="1_a3gnl"]
+
+[node name="NotePreview" type="Panel" unique_id=221275105]
+custom_minimum_size = Vector2(96, 48)
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+mouse_filter = 2
+script = ExtResource("1_a3gnl")
